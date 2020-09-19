@@ -45,14 +45,12 @@ public class TestStockControllerShould {
 
 		assertEquals(2, result.size());
 		assertNotNull(result);
-		System.out.println(result);
 	}
 
 	@Test
 	public void testFindByProductId() {
 		FindByProductIdDto lista = controller.findByProductId(2);
 //		int total = lista.stream().mapToInt(Stock::getQuantity).sum();
-		System.out.println(lista);
 	}
 
 }
