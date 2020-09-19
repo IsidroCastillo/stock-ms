@@ -3,8 +3,10 @@ package com.everis.school.stockms.exception;
 import java.time.Instant;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class BusinessException extends Exception {
 
 	private static final long serialVersionUID = 1L;

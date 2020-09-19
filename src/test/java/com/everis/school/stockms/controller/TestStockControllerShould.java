@@ -2,6 +2,7 @@ package com.everis.school.stockms.controller;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -49,8 +50,22 @@ public class TestStockControllerShould {
 
 	@Test
 	public void testFindByProductId() {
-		FindByProductIdDto lista = controller.findByProductId(2);
-//		int total = lista.stream().mapToInt(Stock::getQuantity).sum();
+
+		Stock stock = new Stock();
+		stock.setId(1);
+		stock.setProductId(2);
+		stock.setWareHouseId(2);
+		stock.setQuantity(12);
+
+		List<Stock> stocks = new ArrayList<>();
+		stocks.add(stock);
+
+//		when(service.findByProductId(1)).thenReturn(stocks);
+
+		FindByProductIdDto result = controller.findByProductId(2);
+
+		assertNotNull(result);
+		assertEquals(2, result.getProductId());
 	}
 
 }
